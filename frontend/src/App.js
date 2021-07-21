@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <>
-      <h1>Welcome to Our Shop</h1>
+    <Header />
+      <main>
+        THis is the main
+      </main>
+    <Footer />
     </>
   );
 }
