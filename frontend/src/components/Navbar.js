@@ -66,7 +66,6 @@ const NavBar = () => {
                   <Link to="/cart">
                     <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                   </Link>
-                  
                 </button>
 
                 {/* Profile dropdown */}
