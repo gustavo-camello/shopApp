@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Navbar from './Navbar';
 
 const Header = () => {
   return (
     <header>
-      <h1 className="text-2xl">Header</h1>
+      <Navbar />
+
     </header>
   )
 }
