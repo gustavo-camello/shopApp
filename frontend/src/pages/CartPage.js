@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import ErrorMessage from '..components/ErrorMessage';
 import ErrorMessage from '../components/ErrorMessage';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import { Link } from 'react-router-dom';
@@ -44,10 +43,10 @@ const CartPage = ({ match, location, history}) => {
         <>
         <ul>
           {cartItems.map(item => (
-            <li key={item.product} className="grid grid-cols-5">
-              <img src={item.image} alt={item.name}/>
-              <Link to={`/product/${item.product}`}>{item.name}</Link>
-              <span>${item.price}</span>
+            <li key={item.product} className="grid grid-cols-10">
+              <img src={item.image} alt={item.name} className="col-span-auto"/>
+              <Link to={`/product/${item.product}`} className="col-span-3 flex item-center">{item.name}</Link>
+              <span className="col-span-auto">${item.price}</span>
               <form>
                 <label>
                   Quantity:
@@ -58,7 +57,7 @@ const CartPage = ({ match, location, history}) => {
                   </select>
                 </label>
               </form>
-              <button type="button" onClick={() => removeFromCartHandler(item.product)}>
+              <button type="button" className="col-span-auto" onClick={() => removeFromCartHandler(item.product)}>
                 X
               </button>
             </li>
