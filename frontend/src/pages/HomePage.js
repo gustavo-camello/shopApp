@@ -20,11 +20,11 @@ const HomeScreen = () => {
     <>
     <h1>Latest Products</h1>
     {loading ? <Loader/> : error ? <ErrorMessage/> : 
-     <div className="flex">
-     {products.map(product => (
-       <Product product={product} />
-     ))}
-   </div>
+     <section className="container mx-auto flex items-start flex-wrap pt-4 pb-12">
+      {products.map(product => (  
+        <Product product={product} />
+      ))}
+      </section>
    }
     </>
   )
