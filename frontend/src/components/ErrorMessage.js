@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const ErrorMessage = () => {
-  return (
-    <h3>Error...</h3>
-  )
-}
+const ErrorMessage = ({ error }) => {
+  return <h3>Error... {error}</h3>;
+};
 
 export default ErrorMessage;
