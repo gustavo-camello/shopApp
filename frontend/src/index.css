@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.margin-left-35 {
+  margin-left: 35%;
+}
+
+@media screen and (max-width: 775px) {
+  .margin-left-35 {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .margin-left-35 {
+    margin-left: 0;
+  }
+}
