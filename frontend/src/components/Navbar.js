@@ -67,9 +67,9 @@ const NavBar = () => {
                   </div>
                 </div>
                 <div className="flex-shrink-0 flex items-center margin-left-35">
-                  <a href="/">
+                  <Link to="/">
                     <h1 className="text-2xl text-white">My Shop</h1>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

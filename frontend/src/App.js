@@ -4,12 +4,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
-import ProfielPageNew from "./pages/ProfilePageNew";
-import CartPageNew from "./pages/CartPageNew";
+import CartPage from "./pages/CartPage";
+import ShippingPage from "./pages/ShippingPage";
+import PaymentPage from "./pages/PaymentPage";
+import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 
 const App = () => {
   return (
@@ -17,10 +18,13 @@ const App = () => {
       <Header />
       <main className="container mx-auto px-20 py-5">
         <Route path="/login" component={LoginPage} />
+        <Route path="/shipping" component={ShippingPage} />
+        <Route path="/payment" component={PaymentPage} />
+        <Route path="/placeorder" component={OrderConfirmationPage} />
         <Route path="/register" component={RegisterPage} />
-        <Route path="/profile" component={ProfielPageNew} />
+        <Route path="/profile" component={ProfilePage} />
         <Route path="/product/:id" component={ProductPage} exact />
-        <Route path="/cart/:id?" component={CartPageNew} />
+        <Route path="/cart/:id?" component={CartPage} />
         <Route path="/" component={HomePage} exact />
       </main>
       <Footer />
