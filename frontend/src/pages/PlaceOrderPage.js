@@ -4,7 +4,7 @@ import CheckoutSteps from "../components/CheckoutSteps";
 import ErrorMessage from "../components/ErrorMessage";
 import { createOrder } from "../actions/orderActions";
 
-const OrderConfirmationPage = ({ history }) => {
+const PlaceOrderPage = ({ history }) => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -30,11 +30,15 @@ const OrderConfirmationPage = ({ history }) => {
       Number(cart.taxesPrice)
   );
 
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+
   useEffect(() => {
     if (success) {
       history.push(`/order/${order._id}`);
     }
-  }, [history]);
+    // eslint-disable-next-line
+  }, [history, success]);
 
   const placeOrderHandler = () => {
     dispatch(
@@ -49,9 +53,6 @@ const OrderConfirmationPage = ({ history }) => {
       })
     );
   };
-
-  const orderCreate = useSelector((state) => state.orderCreate);
-  const { order, success, error } = orderCreate;
 
   return (
     <>
@@ -96,4 +97,4 @@ const OrderConfirmationPage = ({ history }) => {
   );
 };
 
-export default OrderConfirmationPage;
+export default PlaceOrderPage;
