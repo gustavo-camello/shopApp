@@ -5,6 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import Loader from "../components/Loader";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
+import { listMyOrders } from "../actions/orderActions";
 
 const ProfilePage = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -24,6 +25,9 @@ const ProfilePage = ({ location, history }) => {
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
 
+  const orderListMy = useSelector((state) => state.orderListMy);
+  const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
+
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
@@ -33,6 +37,7 @@ const ProfilePage = ({ location, history }) => {
       if (!user || !user.name || success) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
+        dispatch(listMyOrders());
       } else {
         setName(user.name);
         setEmail(user.email);
